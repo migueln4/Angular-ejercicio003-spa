@@ -56,7 +56,3 @@ ng g c components/navbar -is
 
 ---------CREAR RUTAS INTERNAS DEL PROYECTO------
 Hay que crear un archivo dentro de la carpeta src/app que se llame: app.route.ts (esto es una convención).
-
-Para moverse de una página a otra, hay varias maneras:
-
-1) 

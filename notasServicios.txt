@@ -1,0 +1,19 @@
+Si hiciera falta coger los datos para una pantalla, eso podría ir directamente en el componente. Sin embargo, si eso mismo hace falta en algún otro lado, se tiene que hacer un servicio.
+
+Características de los servicios:
+
+- Brindar información a quien lo necesite.
+- Relizar peticiones CRUD.
+- Mantener los datos de forma persistente.
+- Servir como recurso reutilizable para la aplicación.
+
+Básicamente, el servicio permite compartir información por toda la aplicación.
+
+Angular es un lenguaje de front-end y no puede hacer inserciones a la base de datos, pero sí puede hacer CRUD.
+
+---- CÓMO SE CREA UN SERVICIO ---
+En la estructura de carpetas, al mismo nivel de components, dentro de la carpeta app, se debe colocar la carpeta de services (servicios).
+
+Dentro de esta carpeta se van a ir metiendo todos los servicios que vayamos diseñando. Aquí sí que hay un convenio:
+nombredelservicio.service.ts
+

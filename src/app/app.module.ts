@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import{APP_ROUTING} from './app.routes'; //Se tiene que poner la ruta así porque se toma de forma relativa al lugar en el que estamos ahora mismo.
 
 /* ----- SERVICIOS ------ */
-
+import{HeroesService} from './services/heroes.service';
 
 /* ----- COMPONENTES ------ */
 import { AppComponent } from './app.component';
@@ -16,7 +16,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 
 @NgModule({
-  declarations: [
+  declarations: [ //Aquí van los componentes
     AppComponent,
     NavbarComponent,
     HomeComponent,
@@ -25,9 +25,10 @@ import { HeroesComponent } from './components/heroes/heroes.component';
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING //Aquí es donde se mete lo de las rutas
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HeroesService],//Todos los servicios deben ir aquí dentro
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
