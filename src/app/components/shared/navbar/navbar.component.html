@@ -1,3 +1,4 @@
+<!--Este menú se ha copiado directamente de Bootstrap.-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
         <img src="assets/img/A-64.png" width="30" height="30" alt="">
@@ -8,22 +9,16 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
+            <!--"active", de Bootstrap, es la clase para que se destaque algo como activo. Esto se puede sustituir por "routerLinkActive", que es algo de Angular y se usa como un argumento HTML normal. Lo poderoso de esto es que se fija en el elemento routerLink y mira en la clase padre a ver si tiene el atributo routerLinkActive como activo. -->
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['home']">Home</a>
+                <!--Ya no se usa el href="#". Ahora se usa el [routerLink] y se iguala a "['el nombre que se le haya dado en app-route.ts']"-->
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['heroes']">Héroes</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['about']">Acerca de</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

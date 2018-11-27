@@ -53,3 +53,10 @@ La desventaja de este tercer paso es que todas van a depender del bundle y va a 
 Si se quiere prescindir de la hoja de estilos al generar un componente desde cero, hay que poner lo siguiente:
 ng g c components/navbar -is
 -> el -is es lo que quita exactamente eso.
+
+---------CREAR RUTAS INTERNAS DEL PROYECTO------
+Hay que crear un archivo dentro de la carpeta src/app que se llame: app.route.ts (esto es una convención).
+
+Para moverse de una página a otra, hay varias maneras:
+
+1) 
