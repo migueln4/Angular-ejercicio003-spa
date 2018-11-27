@@ -1,3 +1,12 @@
+/* Esto se pone para que tenga un poco más de aire debajo del todo y no acabe abruptamente la web. */
+
+body {
+    padding-bottom: 50px;
+}
+
+
+/* Le doy un poco de espacio arriba a esta clase */
+
 .main-container {
     margin-top: 20px;
 }
