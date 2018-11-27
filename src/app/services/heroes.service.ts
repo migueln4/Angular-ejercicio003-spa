@@ -4,7 +4,8 @@ import{Injectable} from '@angular/core'; //Hay que importar el decorador Injecta
 @Injectable() 
 export class HeroesService {
 //Toda esta información viene de haberla copiado y pegado de un archivo de texto adjunto a la práctica.
-    private heroes:any[] = [ //Esto es una propiedad privada que no puede ser accesible fuera de esta clase. Hace falta un método público para poder acceder a ella.
+    private heroes:Heroe[] = [ //Esto es una propiedad privada que no puede ser accesible fuera de esta clase. Hace falta un método público para poder acceder a ella.
+
         {
           nombre: "Aquaman",
           bio: "El poder más reconocido de Aquaman es la capacidad telepática para comunicarse con la vida marina, la cual puede convocar a grandes distancias.",
@@ -60,7 +61,18 @@ export class HeroesService {
         console.log("Servicio listo para usarse");
     }
 
-    getHeroes() { //La propiedad es privada, pero esto tiene acceso público.
+    getHeroes():Heroe[] { //La propiedad es privada, pero esto tiene acceso público.
         return this.heroes;
     }
 }
+
+//Para que no se pueda insertar ningún objeto que no reúna las mismas condiciones de lo que ya hay predefinido, se hace una interfaz:
+
+export interface Heroe { //Se le pone un export para que esto se pueda exportar fuera de este archivo.
+    nombre:string; //Todas las propiedades son obligatorias
+    bio:string;
+    img:string;
+    aparicion:string;
+    casa:string;
+  }
+  
