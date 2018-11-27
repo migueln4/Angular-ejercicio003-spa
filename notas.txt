@@ -1,0 +1,55 @@
+--------SOBRE LA ESTRUCTURA DE CARPETAS---------
+
+Dentro de src/app, además de crear una carpeta para guardar todos los componentes que se van a desarrollar, también se crea, una un nivel más abajo: shared.
+En la carpeta shared se van a guardar todos los componentes que se van a compartir por todo el proyecto.
+
+Qué ocurre cuando se crea un componente mal hecho del modo automático: hay formas de eliminarlo con el CLI, pero con el Visual Studio Code se puede pinchar y arrastrar fuera de donde se ha metido. En el app.module.ts va a dar un error porque la ruta que le ha metido automáticamente al componente no es la correcta. Ahí se corrige y ya funciona de nuevo todo correctamente.
+
+------BOOTSRATP CON ANGULAR-CLI-----------
+
+Hay 3 formas de instalar librerías externas:
+
+1) Utilizar el CDN o el servidor gestor de contenidos. Por lo general, esto es lo que se recomienda siempre y cuando la librería esté en Internet. Así, cuando el cliente navegue en nuestra web, es muy probable que ya tenga en su caché estos recursos.
+
+Cuando se trata de librerías de Bootstrap, se copian los códigos HTML y se pegan en index.html.
+
+2) También se puede hacer de forma local. Se descarga el archivo de Bootstrap en el ordenador (donde pone Source Files) y se coge la carpeta "dist".
+
+El lugar adecuado para soltarlo es en src/assets/libs/bootstrap
+-> Hay que crear la carpeta libs para las liberías externas y ahí se van guardando todas.
+
+Para que entre de forma local no debe estar hecho el paso 1.
+
+En su lugar, hay que editar las líneas para que los <link> y los <script> apunten a lo que hay dentro de assets. Ahí, hay que apuntar al min.
+
+3) La tercera forma es la de tenerlo usar el no package manager, y así se queda guardado que esa librería en concreto necesita el Bootstrap.
+
+Para que esto funcione no debe haber nada de los puntos 1 y 2.
+
+Se puede poner:
+npm install bootstrap --save
+-> Al añadir --save lo que significa es que la aplicación va a necesitar siempre Bootstrap.
+-> Esto lo deja guardado en node_modules.
+-> Con Bootstrap salen dos warning indicando que jQuery y Popper son necesarios. Se podría ir al lugar en el que están alojados, pero también se pueden copiar las dos referencias a ambas librerías e instalarlas de igual modo.
+npm install jquery --save
+npm install popper --save
+
+Esto es muy habitual, pero también habría que modificar el archivo angular.json:
+
+En la parte donde están "assets", "styles" y "scripts":
+- Dentro de styles
+"src/bootstrap/dist/css/bootstrap.min.css"
+- Dentro de scripts
+"node_modules/jquery/dist/jquery.slim.min.js"
+"node_modules/popper.js/dist/umd/popper.min.js"
+"src/bootstrap/dist/js/bootstrap.min.js"
+
+*Siempre hay que poner el archivo que requiere más dependencias el último.
+**Siempre hay que tumbar el servidor y volverlo a levantar para que coja estos cambios.
+
+La desventaja de este tercer paso es que todas van a depender del bundle y va a hacer que el proyecto va a pesar un poco más.
+
+---------CREACIÓN DE COMPONENTES SIN HOJA DE ESTILOS------
+Si se quiere prescindir de la hoja de estilos al generar un componente desde cero, hay que poner lo siguiente:
+ng g c components/navbar -is
+-> el -is es lo que quita exactamente eso.
