@@ -21,9 +21,11 @@
                 <a class="nav-link" [routerLink]="['about']">Acerca de</a>
             </li>
         </ul>
+        <!--Este buscador lo que hace es buscar rápidamente entre todos los héroes que existen en la web-->
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+            <!--Lo que se hace en esta opción es añadir #buscarTexto para que todo lo que se escriba dentro de la caja de texto del buscador se corresponda con esa variable. Además, se ha añadido un evento en el que, al dejar de pulsar la tecla enter (keyup.enter) lance una función a la que se le pasa por parámetro el valor de la variable de lo que representa que hay en la caja de texto. Se le quita el type de search para que no recargue la págian cada vez que se confirme el contenido del cuadro de texto.-->
+            <input class="form-control mr-sm-2" type="text" placeholder="Busca un superhéroe" aria-label="Buscar un superhéroe" (keyup)="buscarHeroe(buscarTexto.value)" #buscarTexto>
+
         </form>
     </div>
 </nav>

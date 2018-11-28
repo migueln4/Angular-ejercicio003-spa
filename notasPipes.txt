@@ -1,0 +1,15 @@
+Las PIPES cambian los datos solamente de forma visual. No cambia ningún tipo de vista.
+
+Son algo así como los filtros de AngularJS.
+
+Los pipes disponibles en Angular son:
+
+- currency
+- date
+- uppercase
+- json
+- limitTo
+- lowercase
+- async
+- decimal
+- percent

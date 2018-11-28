@@ -1,4 +1,5 @@
-<h1 class="fadeIn">{{heroe.nombre}} <small>{{heroe.aparicion}}</small></h1>
+<!--Con los Pipes se pueden hacer filtros visuales en los datos de Angular. Para pasarle un dato a un pipe y elegir una opción, hay que poner :'tipodeatributo'-->
+<h1 class="fadeIn">{{heroe.nombre | uppercase}} <small>({{heroe.aparicion | date:'y'}})</small></h1>
 <hr>
 
 <div class="row animated fadeIn fast">
