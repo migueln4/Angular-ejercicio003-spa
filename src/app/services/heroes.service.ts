@@ -64,6 +64,10 @@ export class HeroesService {
     getHeroes():Heroe[] { //La propiedad es privada, pero esto tiene acceso público.
         return this.heroes;
     }
+
+    getHeroe(id:string):Heroe {
+        return this.heroes[id]; //Para devolver un héroe, se recibe el identificador y se devuelve el objeto que se corresponde con ese id dentro del array que tiene esto guardado.
+    }
 }
 
 //Para que no se pueda insertar ningún objeto que no reúna las mismas condiciones de lo que ya hay predefinido, se hace una interfaz:

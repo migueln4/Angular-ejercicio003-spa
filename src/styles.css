@@ -12,6 +12,13 @@ body {
 }
 
 
+/* Cómo mostrar los logos de las editoriales en las fichas de cada héroe */
+
+.img-logo {
+    width: 120px;
+}
+
+
 /* ----- ANIMACIONES ----- */
 
 .animated {
