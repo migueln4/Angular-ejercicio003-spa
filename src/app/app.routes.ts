@@ -5,11 +5,13 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import {AboutComponent} from './components/about/about.component';
 import {HeroesComponent} from './components/heroes/heroes.component';
+import {HeroeComponent} from './components/heroe/heroe.component';
 
 const APP_ROUTES: Routes = [ //Lo que se encuentra dentro de esta constante es un array de rutas.
     {path: 'home', component: HomeComponent}, //Todas las rutas que hacen falta movilizar deben importarse al comienzo del archivo.
     {path: 'about', component: AboutComponent},
     {path: 'heroes', component: HeroesComponent},
+    {path: 'heroe/:id', component: HeroeComponent}, //Al crear esta URL, lo que hace es pedir que se añada un identificador para hacer referencia a un héroe
     {path: '**',pathMatch:'full',redirectTo:'home'//Esto está para que, si no se encuentra la ruta que se establece, redirecciona a un lugar determinado
     }
 ];

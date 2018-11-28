@@ -54,7 +54,7 @@ export class HeroesService {
           img: "assets/img/wolverine.png",
           aparicion: "1974-11-01",
           casa: "Marvel"
-        }
+        },
       ];
 
     constructor() {
