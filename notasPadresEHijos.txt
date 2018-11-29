@@ -7,3 +7,7 @@ La idea es que: en el html de un componente se pueden poner las etiquetas del ht
 Desde las etiquetas de referencia es desde donde enviamos esa información al hijo. En el ejemplo de los héroes, heroes.component ya tiene el array de los héroes y su *ngFor lo está recorriendo. Sin embargo, debe pintar algo que no tiene acceso a dicho array, así que le va a enviar la información necesaria, que no es otra que cada elemento del array a medida que lo vaya recorriendo.
 
 IMPORTANTE: En este caso, hay que poner dentro del componente hijo (ficha-heroe.component) un código HTML que represente solo el elemento que se va a repetir. No hay que poner la estructura completa porque, entonces, se repetiría N veces una lista de un objeto. Hay que repetir N veces un objeto dentro de la lista que ya está etiquetada fuara de esa llamada al hijo en el HTML.
+
+También, desde el hijo al padre se puede enviar información. Eso es a través del decorador @Output. Esto debe usarse en el evento que debe escuchar el padre. Así, se marca el nombre de la función con el decorador @Output() y es del tipo EventEmitter, pero también debe tener, entre diamantes, el tipo de dato que va a devolver.
+
+El padre también tiene que poder recibir la información: debe estar "escuchando" lo que emite el hijo. Así, en el HTML del padre se pone a escuchar el evento del hijo y se puede definir qué se quiere que haga cuando se produzca el evento del hijo (como ejecutar una función o lo que sea).

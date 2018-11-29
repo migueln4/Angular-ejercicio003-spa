@@ -7,8 +7,9 @@
     *ngFor="let heroe of heroes; let i = index"-->
 
     <!--Antes estaba aquí todo el código que hay ahora en ficha-heroe.component.html y se mostraba con una repetición de las cards mediante el *ngFor. Ahora, hay que hacer referencia al nuevo componente que se ha creado-->
-    <app-ficha-heroe *ngFor="let personaje of heroes; let i = index" [heroe]="personaje" [indice]="i"></app-ficha-heroe>
+    <app-ficha-heroe *ngFor="let personaje of heroes; let i = index" [heroe]="personaje" [indice]="i" (heroeSeleccionado)="verHeroe($event)"></app-ficha-heroe>
     <!--Así es como se le dice que aquí dentro viene un componente. Está hecho igual en el index. Lo único que se ha hecho es añadir el *ngFor para que recorra el array de los héroes que tiene dentro.
     Desde esta etiqueta HTML se le pueden mandar argumentos desde el padre utilizando el mismo nombre que se le ha puesto a la propiedad en el hijo. [nombre de la propiedad que he declarado en el ficha-heroe.component.ts] = "nombre que se le da a la variable que se va a repetir en el *ngFor" (la variable local). -->
+    <!--Cuando se trata de recibir información del hijo, una vez que se ha declarado el Output en él, hay que poder recibirla. Como se trata de un evento, hay que poner el nombre del propio evento que se ha declarado en el hijo entre paréntesis e igualarlo a lo que queremos que haga cuando se ejecute. Ahora bien, como necesita que a la función de verHeroe se le envíe por argumento un número y eso es precisamente lo que está emitiendo el evento del hijo, se hace referencia a él a través de la variable $event (siempre es así).-->
 
 </div>

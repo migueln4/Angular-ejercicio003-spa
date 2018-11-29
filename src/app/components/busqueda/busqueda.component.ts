@@ -31,4 +31,8 @@ export class BusquedaComponent implements OnInit {
 
   }
 
+  verHeroe(id:number) {
+    this.router.navigate(['/heroe',id]);
+  }
+
 }
