@@ -1,0 +1,24 @@
+<!--El array con todos los héroes ya es una propiedad del componente de esta página porque se ha traído desde el servicio. Ahora se puede utilizar aquí.-->
+
+<div class="card animated fadeIn fast">
+    <!--Se puede utilizar, en el src, la propiedad del objeto que hace referencia a la ruta de la imagen: src="{{heroe.img}}"
+    Sin embargo, es mucho mejor utilizar lo que se ha usado aquí, que es el correcto uso de Angular. El uso de [] sirve para que el atributo de la etiqueta se maneje con Angular y no haya que poner {}.-->
+    <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
+    <div class="card-body">
+        <h5 class="card-title">{{heroe.nombre}}</h5>
+        <p class="card-text">{{heroe.bio}}</p>
+        <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+
+        <!--CÓMO HACER LA REDIRECCIÓN CON CÓDIGO DE PROGRAMACIÓN-->
+        <!--Esto se hace mediante la construcción de una función en el componente de esta página. Por eso, hay que añadir (click) como un evento y qué función se debe ejecutar.-->
+        <button (click)="verHeroe(indice)" type="button" class="btn btn-dark btn-block">Ver más</button>
+
+
+
+        <!--CÓMO HACER LA REDIRECCIÓN SOLO CON UN ENLACE <a>-->
+
+        <!--Lo que hacemos aquí es una nueva sintaxis. Si se deja así: 
+        [routerLink]="['heroe',i]" lo que intenta es ir a heroes/heroe/id lo cual no es lo que queremos, sino que obvie lo de heroes. La solución es la de añadir el /-->
+        <a [routerLink]="['/heroe',indice]" class="btn btn-dark btn-block">Ver más</a>
+    </div>
+</div>

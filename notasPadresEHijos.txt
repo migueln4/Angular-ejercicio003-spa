@@ -1,0 +1,9 @@
+Una de las mejores formas de reutilizar código es la de utilizar componentes padres e hijos. Para ello, hay que establecer comunicaciones entre ellos.
+
+Para eso, hay que utilizar el decorador @Input en las propiedades de los componentes.ts que necesiten recibir información desde fuera.
+
+La idea es que: en el html de un componente se pueden poner las etiquetas del html de otro componente html y que aparezca justo ahí. Además, a ese componente "hijo" al que se está referenciando, en su .ts, se le pueden poner propiedades marcadas con @Input(), que quiere decir que sus valores se pueden recibir desde fuera.
+
+Desde las etiquetas de referencia es desde donde enviamos esa información al hijo. En el ejemplo de los héroes, heroes.component ya tiene el array de los héroes y su *ngFor lo está recorriendo. Sin embargo, debe pintar algo que no tiene acceso a dicho array, así que le va a enviar la información necesaria, que no es otra que cada elemento del array a medida que lo vaya recorriendo.
+
+IMPORTANTE: En este caso, hay que poner dentro del componente hijo (ficha-heroe.component) un código HTML que represente solo el elemento que se va a repetir. No hay que poner la estructura completa porque, entonces, se repetiría N veces una lista de un objeto. Hay que repetir N veces un objeto dentro de la lista que ya está etiquetada fuara de esa llamada al hijo en el HTML.
